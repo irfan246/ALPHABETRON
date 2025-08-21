@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "ga",
+      "answers": ["Mangga", "Singa", "Pangga"],
+      "correctIndex": 0,
+      "clue": "buas",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "at",
+      "answers": ["Lalat", "Kuat", "Sehat"],
+      "correctIndex": 0,
+      "clue": "serangga \nASdasas asdaDad",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    }
+  ]
+}

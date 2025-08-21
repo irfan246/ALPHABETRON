@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "qustion": ["a", "u", "k", "r", "s"],
+      "answer": "kasur",
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "qustion": ["m", "y", "a", "a"],
+      "answer": "ayam",
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "qustion": ["p", "a", "s", "i"],
+      "answer": "sapi",
+      "coin1": 100,
+      "coin2": 50
+    }
+  ]
+}
