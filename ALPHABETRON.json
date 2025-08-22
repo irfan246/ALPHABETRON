@@ -6132,7 +6132,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5653158055126344,
+        "zoomFactor": 0.43357743047024006,
         "windowMask": false
       },
       "objectsGroups": [
@@ -14658,7 +14658,7 @@
           "width": 663,
           "x": 309,
           "y": -85,
-          "zOrder": 13,
+          "zOrder": 24,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -14856,38 +14856,6 @@
           "x": 192,
           "y": 150,
           "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 436,
-          "layer": "Robot dialog",
-          "name": "Robot_Spawn",
-          "persistentUuid": "25c40b97-53d9-4fe1-afd4-d2e1a8bb91b4",
-          "width": 297,
-          "x": 491,
-          "y": 164,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 429,
-          "layer": "Win or Lose",
-          "name": "Robot_Spawn",
-          "persistentUuid": "7f54df9b-3943-4c57-8657-77a0b5be5428",
-          "width": 295,
-          "x": 88,
-          "y": 171,
-          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -17062,6 +17030,183 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -17501,6 +17646,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -17571,6 +17717,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -17667,6 +17814,7 @@
               ],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -17774,6 +17922,7 @@
                   ],
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -17864,6 +18013,157 @@
                       ],
                       "events": [
                         {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "SelectedCharacter",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Robot",
+                                "502",
+                                "166",
+                                "\"Robot dialog\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                              },
+                              "parameters": [
+                                "Robot",
+                                "Resizable",
+                                "275",
+                                "434"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ChangePlan"
+                              },
+                              "parameters": [
+                                "Robot",
+                                "=",
+                                "23"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "SelectedCharacter",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Robot2",
+                                "502",
+                                "166",
+                                "\"Robot dialog\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                              },
+                              "parameters": [
+                                "Robot2",
+                                "Resizable",
+                                "275",
+                                "434"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ChangePlan"
+                              },
+                              "parameters": [
+                                "Robot2",
+                                "=",
+                                "23"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "SelectedCharacter",
+                                "=",
+                                "2"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Robot2",
+                                "502",
+                                "166",
+                                "\"Robot dialog\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                              },
+                              "parameters": [
+                                "Robot2",
+                                "Resizable",
+                                "275",
+                                "434"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ChangePlan"
+                              },
+                              "parameters": [
+                                "Robot2",
+                                "=",
+                                "23"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -18009,6 +18309,7 @@
                           ],
                           "events": [
                             {
+                              "folded": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
@@ -18109,6 +18410,7 @@
                               ],
                               "events": [
                                 {
+                                  "folded": true,
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
                                     {
@@ -18178,6 +18480,52 @@
                                     },
                                     {
                                       "type": {
+                                        "value": "MettreXY"
+                                      },
+                                      "parameters": [
+                                        "Bayangan",
+                                        "=",
+                                        "105",
+                                        "=",
+                                        "579"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                      },
+                                      "parameters": [
+                                        "Bayangan",
+                                        "Resizable",
+                                        "396",
+                                        "57"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Robot4",
+                                        "Animation",
+                                        "=",
+                                        "\"nyapa\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "MettreXY"
+                                      },
+                                      "parameters": [
+                                        "Robot4",
+                                        "=",
+                                        "71",
+                                        "=",
+                                        "116"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "ChangePlan"
                                       },
                                       "parameters": [
@@ -18198,40 +18546,6 @@
                                     },
                                     {
                                       "type": {
-                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                                      },
-                                      "parameters": [
-                                        "Robot4",
-                                        "Animation",
-                                        "=",
-                                        "\"nyapa\""
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "ResizableCapability::ResizableBehavior::SetSize"
-                                      },
-                                      "parameters": [
-                                        "Robot4",
-                                        "Resizable",
-                                        "430",
-                                        "520"
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "MettreXY"
-                                      },
-                                      "parameters": [
-                                        "Robot4",
-                                        "=",
-                                        "71",
-                                        "=",
-                                        "116"
-                                      ]
-                                    },
-                                    {
-                                      "type": {
                                         "value": "ResizableCapability::ResizableBehavior::SetSize"
                                       },
                                       "parameters": [
@@ -18239,6 +18553,17 @@
                                         "Resizable",
                                         "648",
                                         "648"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                      },
+                                      "parameters": [
+                                        "Robot4",
+                                        "Resizable",
+                                        "372",
+                                        "492"
                                       ]
                                     },
                                     {
@@ -18325,6 +18650,7 @@
                                   ],
                                   "events": [
                                     {
+                                      "folded": true,
                                       "type": "BuiltinCommonInstructions::Standard",
                                       "conditions": [
                                         {
@@ -18397,13 +18723,14 @@
                                         },
                                         {
                                           "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                            "value": "MettreXY"
                                           },
                                           "parameters": [
-                                            "Robot4",
-                                            "Animation",
+                                            "Bayangan",
                                             "=",
-                                            "\"menang\""
+                                            "52",
+                                            "=",
+                                            "571"
                                           ]
                                         },
                                         {
@@ -18518,6 +18845,191 @@
                                             "\"50\""
                                           ]
                                         }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "NumberVariable"
+                                              },
+                                              "parameters": [
+                                                "SelectedCharacter",
+                                                "=",
+                                                "0"
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "Create"
+                                              },
+                                              "parameters": [
+                                                "",
+                                                "Robot",
+                                                "97",
+                                                "171",
+                                                "\"Win or Lose\""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                              },
+                                              "parameters": [
+                                                "Robot",
+                                                "Resizable",
+                                                "286",
+                                                "429"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ChangePlan"
+                                              },
+                                              "parameters": [
+                                                "Robot",
+                                                "=",
+                                                "23"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Robot4",
+                                                "Animation",
+                                                "=",
+                                                "\"menang\""
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "NumberVariable"
+                                              },
+                                              "parameters": [
+                                                "SelectedCharacter",
+                                                "=",
+                                                "1"
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "Create"
+                                              },
+                                              "parameters": [
+                                                "",
+                                                "Robot2",
+                                                "97",
+                                                "171",
+                                                "\"Win or Lose\""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                              },
+                                              "parameters": [
+                                                "Robot2",
+                                                "Resizable",
+                                                "286",
+                                                "429"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ChangePlan"
+                                              },
+                                              "parameters": [
+                                                "Robot2",
+                                                "=",
+                                                "23"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Robot4",
+                                                "Animation",
+                                                "=",
+                                                "\"menang\""
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "NumberVariable"
+                                              },
+                                              "parameters": [
+                                                "SelectedCharacter",
+                                                "=",
+                                                "2"
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "Create"
+                                              },
+                                              "parameters": [
+                                                "",
+                                                "Robot2",
+                                                "97",
+                                                "171",
+                                                "\"Win or Lose\""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                              },
+                                              "parameters": [
+                                                "Robot2",
+                                                "Resizable",
+                                                "286",
+                                                "429"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ChangePlan"
+                                              },
+                                              "parameters": [
+                                                "Robot2",
+                                                "=",
+                                                "23"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Robot4",
+                                                "Animation",
+                                                "=",
+                                                "\"menang\""
+                                              ]
+                                            }
+                                          ]
+                                        }
                                       ]
                                     }
                                   ]
@@ -18533,6 +19045,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -18630,6 +19143,7 @@
               ],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -18737,6 +19251,7 @@
                   ],
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -18948,6 +19463,15 @@
                                 "=",
                                 "\"default\""
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "UnPauseTimer"
+                              },
+                              "parameters": [
+                                "",
+                                "\"countDown\""
+                              ]
                             }
                           ]
                         }
@@ -19026,29 +19550,6 @@
                 "Animation",
                 "=",
                 "\"lose\""
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "Robot4",
-                "=",
-                "54",
-                "=",
-                "185"
-              ]
-            },
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Robot4",
-                "Animation",
-                "=",
-                "\"mati\""
               ]
             },
             {
@@ -19132,14 +19633,6 @@
             },
             {
               "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1.5"
-              ]
-            },
-            {
-              "type": {
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
@@ -19169,6 +19662,191 @@
                 "Text",
                 "=",
                 "\"0\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot",
+                    "97",
+                    "171",
+                    "\"Win or Lose\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Resizable",
+                    "286",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"mati\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "97",
+                    "171",
+                    "\"Win or Lose\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "286",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"mati\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "97",
+                    "171",
+                    "\"Win or Lose\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "286",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"mati\""
+                  ]
+                }
               ]
             }
           ]
