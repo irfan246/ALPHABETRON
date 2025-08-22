@@ -1463,6 +1463,30 @@
         "name": "hore.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "charcter.json",
+        "kind": "json",
+        "metadata": "",
+        "name": "charcter.json",
+        "userAdded": false
+      },
+      {
+        "file": "Robot Topi Kuning/mati.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Robot Topi Kuning\\mati.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Robot Unggu/mati.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Robot Unggu\\mati.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1474,6 +1498,11 @@
   "objectsGroups": [],
   "variables": [
     {
+      "name": "CharacterData",
+      "type": "structure",
+      "children": []
+    },
+    {
       "name": "SceneTranstion",
       "type": "string",
       "value": ""
@@ -1481,7 +1510,7 @@
     {
       "name": "CoinGlobal",
       "type": "number",
-      "value": 0
+      "value": 1000000
     },
     {
       "name": "SelectedCharacter",
@@ -1489,22 +1518,19 @@
       "value": 0
     },
     {
+      "name": "Character",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "CharacterUnlock",
       "type": "array",
-      "children": [
-        {
-          "type": "number",
-          "value": 1
-        },
-        {
-          "type": "number",
-          "value": 0
-        },
-        {
-          "type": "number",
-          "value": 0
-        }
-      ]
+      "children": []
+    },
+    {
+      "name": "TempVar",
+      "type": "string",
+      "value": "0"
     }
   ],
   "layouts": [
@@ -3716,7 +3742,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "",
+              "name": "robot biru",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -3726,6 +3752,102 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "robot biru nyapa.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 802,
+                            "y": 0
+                          },
+                          {
+                            "x": 802,
+                            "y": 1062
+                          },
+                          {
+                            "x": 0,
+                            "y": 1062
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "robot unggu",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\gyat 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 802,
+                            "y": 0
+                          },
+                          {
+                            "x": 802,
+                            "y": 1062
+                          },
+                          {
+                            "x": 0,
+                            "y": 1062
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "robot topi kuning",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\lambai 1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -3983,6 +4105,211 @@
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ReadNumberFromStorage"
+              },
+              "parameters": [
+                "\"PlayerData\"",
+                "\"SelectedCharacter\"",
+                "",
+                "SelectedCharacter"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot1",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "=",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot3",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "=",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -5805,10 +6132,25 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.43357743047023967,
+        "zoomFactor": 0.5653158055126344,
         "windowMask": false
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "Robot",
+          "objects": [
+            {
+              "name": "Robot1"
+            },
+            {
+              "name": "Robot2"
+            },
+            {
+              "name": "Robot3"
+            }
+          ]
+        }
+      ],
       "variables": [
         {
           "name": "Data",
@@ -6214,38 +6556,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 56,
-          "layer": "Win",
-          "name": "Answer_Correct",
-          "persistentUuid": "63ee1d15-044e-4a60-a8bd-9b00259254fb",
-          "width": 59,
-          "x": 829,
-          "y": 367,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 57,
-          "layer": "Win",
-          "name": "Answer_Title_Correct",
-          "persistentUuid": "71483c73-63a0-4624-a4e3-e671ebf26b9c",
-          "width": 192,
-          "x": 899,
-          "y": 367,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -6411,22 +6721,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 349,
-          "layer": "",
-          "name": "Robot1",
-          "persistentUuid": "61154919-5915-404f-b136-64ee2e968e25",
-          "width": 238,
-          "x": 139,
-          "y": 241,
-          "zOrder": 26,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 57,
           "layer": "",
           "name": "Bayangan",
@@ -6460,23 +6754,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 387,
-          "keepRatio": true,
-          "layer": "Win",
-          "name": "Robot2",
-          "persistentUuid": "2f40f219-2751-4a3d-9d45-8182ff04acfe",
-          "width": 391,
-          "x": 316,
-          "y": 224,
-          "zOrder": 28,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 57,
           "layer": "Win",
           "name": "Bayangan",
@@ -6500,7 +6777,7 @@
           "width": 611,
           "x": 274,
           "y": -46,
-          "zOrder": 30,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -6559,22 +6836,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 429,
-          "layer": "Reward",
-          "name": "Robot2",
-          "persistentUuid": "c4f0dbdd-ddc2-4b55-8695-48ed700e13b8",
-          "width": 295,
-          "x": 88,
-          "y": 171,
-          "zOrder": 34,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 120,
           "layer": "Reward",
           "name": "Robot_Text",
@@ -6599,6 +6860,54 @@
           "x": 52,
           "y": 571,
           "zOrder": 33,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 349,
+          "layer": "",
+          "name": "Robot_Spawn",
+          "persistentUuid": "fd8c0920-a37d-4cea-9975-4ba1be50f1c6",
+          "width": 238,
+          "x": 139,
+          "y": 241,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 56,
+          "layer": "Win",
+          "name": "Answer",
+          "persistentUuid": "88b0f750-ef04-4aa3-9178-a1798e43c84a",
+          "width": 59,
+          "x": 829,
+          "y": 367,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 57,
+          "layer": "Win",
+          "name": "Answer_Title",
+          "persistentUuid": "7427139c-0881-4c5f-b724-ee1d628c5ebd",
+          "width": 192,
+          "x": 899,
+          "y": 367,
+          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -6981,7 +7290,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewSprite2",
+                      "image": "kotak.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7001,16 +7310,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 134,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 134,
+                            "y": 134
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 134
                           }
                         ]
                       ]
@@ -7030,7 +7339,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "correct2",
+                      "image": "kotak bener.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7050,16 +7359,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 134,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 134,
+                            "y": 134
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 134
                           }
                         ]
                       ]
@@ -7079,7 +7388,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "wrong2",
+                      "image": "kotak salah.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7099,16 +7408,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 134,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 134,
+                            "y": 134
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 134
                           }
                         ]
                       ]
@@ -7139,7 +7448,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewSprite2",
+                      "image": "background answer default2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7159,16 +7468,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 384,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 384,
+                            "y": 114
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 114
                           }
                         ]
                       ]
@@ -7187,7 +7496,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "correct",
+                      "image": "background answer correct2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7207,16 +7516,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 384,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 384,
+                            "y": 114
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 114
                           }
                         ]
                       ]
@@ -7235,7 +7544,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "wrong",
+                      "image": "background answer wrong2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7255,16 +7564,16 @@
                             "y": 0
                           },
                           {
-                            "x": 64,
+                            "x": 384,
                             "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 384,
+                            "y": 114
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 114
                           }
                         ]
                       ]
@@ -7360,128 +7669,6 @@
             "lineHeight": 0,
             "color": "0;0;0"
           }
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "Answer_Correct",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "NewSprite",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "NewSprite4",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "Answer_Title_Correct",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "NewSprite",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "NewSprite4",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         },
         {
           "assetStoreId": "",
@@ -8381,6 +8568,77 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot_Spawn",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite5",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "NewSprite",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
         }
       ],
       "objectsFolderStructure": {
@@ -8414,12 +8672,6 @@
             "objectName": "Answer"
           },
           {
-            "objectName": "Answer_Correct"
-          },
-          {
-            "objectName": "Answer_Title_Correct"
-          },
-          {
             "objectName": "Answer_Title"
           },
           {
@@ -8427,6 +8679,9 @@
           },
           {
             "objectName": "Answer_Text"
+          },
+          {
+            "objectName": "NewSprite"
           },
           {
             "objectName": "Robot_Text"
@@ -8460,11 +8715,15 @@
           },
           {
             "objectName": "Batre_Full"
+          },
+          {
+            "objectName": "Robot_Spawn"
           }
         ]
       },
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -8486,6 +8745,17 @@
                 "\"Coin\"",
                 "",
                 "CoinGlobal"
+              ]
+            },
+            {
+              "type": {
+                "value": "ReadNumberFromStorage"
+              },
+              "parameters": [
+                "\"PlayerData\"",
+                "\"SelectedCharacter\"",
+                "",
+                "SelectedCharacter"
               ]
             },
             {
@@ -8548,22 +8818,191 @@
             },
             {
               "type": {
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "Data.questions[1]",
-                "\"info\"",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
                 "RandomIndex",
                 "=",
                 "RandomInRange(0, VariableChildCount(Data.questions) - 1)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot1",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "=",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot3",
+                    "Robot_Spawn.X()",
+                    "Robot_Spawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "Resizable",
+                    "Robot_Spawn.Width()",
+                    "Robot_Spawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "=",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Spawn",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -8780,6 +9219,158 @@
                     "VariableString(Data.questions[Variable(RandomIndex)].answers[Variable(Data.questions[Variable(RandomIndex)].correctIndex)])"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot1",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot1",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot1",
+                        "=",
+                        "14"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot2",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot2",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot2",
+                        "=",
+                        "14"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot3",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot3",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot3",
+                        "=",
+                        "14"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -8958,6 +9549,39 @@
             },
             {
               "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Answer_Title",
+                "Animation",
+                "=",
+                "\"correct\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Answer",
+                "Animation",
+                "=",
+                "\"correct\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Robot",
+                "Animation",
+                "=",
+                "\"menang\""
+              ]
+            },
+            {
+              "type": {
                 "value": "Wait"
               },
               "parameters": [
@@ -9093,6 +9717,191 @@
                 "Robot_Text",
                 "=",
                 "40"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot1",
+                    "88",
+                    "171",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "Resizable",
+                    "295",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot1",
+                    "=",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "88",
+                    "171",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "295",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot3",
+                    "88",
+                    "171",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "Resizable",
+                    "295",
+                    "429"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "=",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
               ]
             }
           ]
@@ -9414,10 +10223,25 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.3553434558817011,
+        "zoomFactor": 0.41943397827590984,
         "windowMask": false
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "Robot4",
+          "objects": [
+            {
+              "name": "Robot"
+            },
+            {
+              "name": "Robot2"
+            },
+            {
+              "name": "Robot3"
+            }
+          ]
+        }
+      ],
       "variables": [
         {
           "name": "Data",
@@ -9894,39 +10718,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 349,
-          "layer": "",
-          "name": "Robot",
-          "persistentUuid": "6d7e6e43-cc14-43ba-8d32-4d72ee9dd339",
-          "width": 238,
-          "x": 139,
-          "y": 241,
-          "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 387,
-          "keepRatio": true,
-          "layer": "Win",
-          "name": "Robot2",
-          "persistentUuid": "262fa405-3a6a-439d-bdad-7ca751f899ef",
-          "width": 391,
-          "x": 316,
-          "y": 224,
-          "zOrder": 22,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 57,
           "layer": "Win",
           "name": "Bayangan",
@@ -9950,7 +10741,7 @@
           "width": 611,
           "x": 274,
           "y": -55,
-          "zOrder": 23,
+          "zOrder": 30,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -10009,22 +10800,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 429,
-          "layer": "Reward",
-          "name": "Robot2",
-          "persistentUuid": "f52da8fe-d469-42bd-b208-9433854caed0",
-          "width": 434,
-          "x": -51,
-          "y": 171,
-          "zOrder": 27,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 57,
           "layer": "Reward",
           "name": "Bayangan",
@@ -10066,6 +10841,22 @@
           "x": 401,
           "y": 72,
           "zOrder": 30,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 349,
+          "layer": "",
+          "name": "Robot_Respawn",
+          "persistentUuid": "dd4eaa09-978d-49d6-8b2c-bac816103812",
+          "width": 238,
+          "x": 139,
+          "y": 241,
+          "zOrder": 32,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -10767,7 +11558,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "background answer default.png",
+                      "image": "background answer default2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10815,7 +11606,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "background answer correct.png",
+                      "image": "background answer correct2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10863,7 +11654,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "background answer wrong.png",
+                      "image": "background answer wrong2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -11309,7 +12100,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "default",
+              "name": "murung",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -11318,7 +12109,103 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "robot biru murung.png",
+                      "image": "Robot Biru\\bobot 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 662,
+                            "y": 0
+                          },
+                          {
+                            "x": 662,
+                            "y": 972
+                          },
+                          {
+                            "x": 0,
+                            "y": 972
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bingung",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Biru\\ai 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 662,
+                            "y": 0
+                          },
+                          {
+                            "x": 662,
+                            "y": 972
+                          },
+                          {
+                            "x": 0,
+                            "y": 972
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "hore.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -11408,66 +12295,6 @@
                           {
                             "x": 17,
                             "y": 123
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "Robot2",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "default",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "robot biru hore.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 270,
-                            "y": 0
-                          },
-                          {
-                            "x": 782,
-                            "y": 0
-                          },
-                          {
-                            "x": 782,
-                            "y": 774
-                          },
-                          {
-                            "x": 270,
-                            "y": 774
                           }
                         ]
                       ]
@@ -11597,6 +12424,378 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "murung",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\low 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 922
+                          },
+                          {
+                            "x": 0,
+                            "y": 922
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bingung",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\bingung 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 922
+                          },
+                          {
+                            "x": 0,
+                            "y": 922
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\senang 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 0
+                          },
+                          {
+                            "x": 616,
+                            "y": 922
+                          },
+                          {
+                            "x": 0,
+                            "y": 922
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot3",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "murung",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\sedih 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 1134
+                          },
+                          {
+                            "x": 0,
+                            "y": 1134
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bingung",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\bingy 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 1134
+                          },
+                          {
+                            "x": 0,
+                            "y": 1134
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\menang 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 0
+                          },
+                          {
+                            "x": 721,
+                            "y": 1134
+                          },
+                          {
+                            "x": 0,
+                            "y": 1134
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot_Respawn",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite5",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -11631,6 +12830,9 @@
           },
           {
             "objectName": "Background_Qustion"
+          },
+          {
+            "objectName": "Robot_Respawn"
           },
           {
             "objectName": "Text_Qustion3"
@@ -11669,6 +12871,9 @@
             "objectName": "Robot2"
           },
           {
+            "objectName": "Robot3"
+          },
+          {
             "objectName": "Batre_Full"
           },
           {
@@ -11702,6 +12907,17 @@
                 "\"Coin\"",
                 "",
                 "CoinGlobal"
+              ]
+            },
+            {
+              "type": {
+                "value": "ReadNumberFromStorage"
+              },
+              "parameters": [
+                "\"PlayerData\"",
+                "\"SelectedCharacter\"",
+                "",
+                "SelectedCharacter"
               ]
             },
             {
@@ -11772,6 +12988,185 @@
                 "RandomIndex",
                 "=",
                 "RandomInRange(0, VariableChildCount(Data.questions) - 1)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot",
+                    "Robot_Respawn.X()",
+                    "Robot_Respawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Resizable",
+                    "Robot_Respawn.Width()",
+                    "Robot_Respawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Respawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "Robot_Respawn.X()",
+                    "Robot_Respawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "Robot_Respawn.Width()",
+                    "Robot_Respawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Respawn",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot3",
+                    "Robot_Respawn.X()",
+                    "Robot_Respawn.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "Resizable",
+                    "Robot_Respawn.Width()",
+                    "Robot_Respawn.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Robot_Respawn",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -11920,7 +13315,6 @@
           "actions": []
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -11978,6 +13372,7 @@
           ],
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -12067,6 +13462,158 @@
                     "Text",
                     "=",
                     "VariableString(Data.questions[Variable(RandomIndex)].answers[Variable(Data.questions[Variable(RandomIndex)].correctIndex)])"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "=",
+                        "27"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot2",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot2",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot2",
+                        "=",
+                        "27"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Robot3",
+                        "446",
+                        "224",
+                        "\"Win\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot3",
+                        "Resizable",
+                        "261",
+                        "387"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Robot3",
+                        "=",
+                        "27"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -12256,6 +13803,17 @@
             },
             {
               "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Robot4",
+                "Animation",
+                "=",
+                "\"menang\""
+              ]
+            },
+            {
+              "type": {
                 "value": "Wait"
               },
               "parameters": [
@@ -12283,6 +13841,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12391,6 +13950,191 @@
                 "Robot_Dialog",
                 "=",
                 "40"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot",
+                    "139",
+                    "241",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Resizable",
+                    "238",
+                    "349"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot2",
+                    "139",
+                    "241",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "Resizable",
+                    "238",
+                    "349"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot2",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot3",
+                    "139",
+                    "241",
+                    "\"Reward\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "Resizable",
+                    "238",
+                    "349"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Robot3",
+                    "=",
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot4",
+                    "Animation",
+                    "=",
+                    "\"menang\""
+                  ]
+                }
               ]
             }
           ]
@@ -12716,10 +14460,25 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.35534345588169886,
+        "zoomFactor": 0.3216911764705893,
         "windowMask": false
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "Robot4",
+          "objects": [
+            {
+              "name": "Robot"
+            },
+            {
+              "name": "Robot2"
+            },
+            {
+              "name": "Robot3"
+            }
+          ]
+        }
+      ],
       "variables": [
         {
           "name": "Data",
@@ -12786,22 +14545,6 @@
           "x": 0,
           "y": 0,
           "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 450,
-          "layer": "",
-          "name": "Robot",
-          "persistentUuid": "a096be55-003c-449c-8d6d-a9396a107648",
-          "width": 307,
-          "x": 192,
-          "y": 150,
-          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -12908,22 +14651,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 434,
-          "layer": "Robot dialog",
-          "name": "Robot",
-          "persistentUuid": "6f7aff06-e3ce-468f-92e2-23e3a92397d1",
-          "width": 275,
-          "x": 502,
-          "y": 166,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 713,
           "layer": "Robot dialog",
           "name": "Lampu",
@@ -12931,7 +14658,7 @@
           "width": 663,
           "x": 309,
           "y": -85,
-          "zOrder": 10,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -12984,22 +14711,6 @@
           "x": 0,
           "y": 0,
           "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 429,
-          "layer": "Win or Lose",
-          "name": "Robot2",
-          "persistentUuid": "6947d219-06a3-4d66-ac52-bb9397252a5b",
-          "width": 434,
-          "x": -51,
-          "y": 171,
-          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13132,6 +14843,54 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 450,
+          "layer": "",
+          "name": "Robot_Spawn",
+          "persistentUuid": "9202efda-2c64-4100-9949-453c988b9af1",
+          "width": 307,
+          "x": 192,
+          "y": 150,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 436,
+          "layer": "Robot dialog",
+          "name": "Robot_Spawn",
+          "persistentUuid": "25c40b97-53d9-4fe1-afd4-d2e1a8bb91b4",
+          "width": 297,
+          "x": 491,
+          "y": 164,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 429,
+          "layer": "Win or Lose",
+          "name": "Robot_Spawn",
+          "persistentUuid": "7f54df9b-3943-4c57-8657-77a0b5be5428",
+          "width": 295,
+          "x": 88,
+          "y": 171,
+          "zOrder": 22,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -13206,7 +14965,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "default",
+              "name": "mati",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -13312,6 +15071,54 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "robot biru nyapa.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 614,
+                            "y": 0
+                          },
+                          {
+                            "x": 614,
+                            "y": 900
+                          },
+                          {
+                            "x": 0,
+                            "y": 900
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "hore.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -14226,7 +16033,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "Win",
+              "name": "mati",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -14235,7 +16042,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "robot biru hore.png",
+                      "image": "Robot Unggu\\mati.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -14251,20 +16058,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 270,
+                            "x": 0,
                             "y": 0
                           },
                           {
-                            "x": 782,
+                            "x": 627,
                             "y": 0
                           },
                           {
-                            "x": 782,
-                            "y": 774
+                            "x": 627,
+                            "y": 939
                           },
                           {
-                            "x": 270,
-                            "y": 774
+                            "x": 0,
+                            "y": 939
                           }
                         ]
                       ]
@@ -14274,7 +16081,7 @@
               ]
             },
             {
-              "name": "Lose",
+              "name": "hidup",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -14283,7 +16090,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "robot biru murung.png",
+                      "image": "Robot Unggu\\Untitled-2 1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -14299,20 +16106,116 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 270,
+                            "x": 0,
                             "y": 0
                           },
                           {
-                            "x": 782,
+                            "x": 627,
                             "y": 0
                           },
                           {
-                            "x": 782,
-                            "y": 774
+                            "x": 627,
+                            "y": 939
                           },
                           {
-                            "x": 270,
-                            "y": 774
+                            "x": 0,
+                            "y": 939
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "nyapa",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\gyat 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 627,
+                            "y": 0
+                          },
+                          {
+                            "x": 627,
+                            "y": 939
+                          },
+                          {
+                            "x": 0,
+                            "y": 939
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Unggu\\senang 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 627,
+                            "y": 0
+                          },
+                          {
+                            "x": 627,
+                            "y": 939
+                          },
+                          {
+                            "x": 0,
+                            "y": 939
                           }
                         ]
                       ]
@@ -14571,6 +16474,270 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot_Spawn",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite5",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Robot3",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "mati",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\mati.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 974
+                          },
+                          {
+                            "x": 0,
+                            "y": 974
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "hidup",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\ai 4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 974
+                          },
+                          {
+                            "x": 0,
+                            "y": 974
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "nyapa",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\lambai 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 974
+                          },
+                          {
+                            "x": 0,
+                            "y": 974
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "menang",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Robot Topi Kuning\\menang 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 1
+                          },
+                          {
+                            "x": 618,
+                            "y": 974
+                          },
+                          {
+                            "x": 0,
+                            "y": 974
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -14580,13 +16747,19 @@
             "objectName": "Background"
           },
           {
-            "objectName": "Robot"
-          },
-          {
             "objectName": "Bayangan"
           },
           {
+            "objectName": "Robot"
+          },
+          {
             "objectName": "Robot2"
+          },
+          {
+            "objectName": "Robot3"
+          },
+          {
+            "objectName": "Robot_Spawn"
           },
           {
             "objectName": "Qustion"
@@ -14951,6 +17124,34 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Timer",
+                "<",
+                "10"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Text_Timer",
+                "Text",
+                "=",
+                "\"0\" + ToString(Variable(Timer))"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "SourisSurObjet"
               },
               "parameters": [
@@ -14995,7 +17196,7 @@
               "parameters": [
                 "Text_Answer",
                 "=",
-                "14"
+                "30"
               ]
             },
             {
@@ -15300,7 +17501,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -15371,7 +17571,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -15468,7 +17667,6 @@
               ],
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -15576,7 +17774,6 @@
                   ],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -15667,7 +17864,6 @@
                       ],
                       "events": [
                         {
-                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -15757,7 +17953,7 @@
                                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
                               },
                               "parameters": [
-                                "Robot",
+                                "Robot4",
                                 "Animation",
                                 "=",
                                 "\"hidup\""
@@ -15813,7 +18009,6 @@
                           ],
                           "events": [
                             {
-                              "folded": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
@@ -15914,7 +18109,6 @@
                               ],
                               "events": [
                                 {
-                                  "folded": true,
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
                                     {
@@ -15984,10 +18178,30 @@
                                     },
                                     {
                                       "type": {
+                                        "value": "ChangePlan"
+                                      },
+                                      "parameters": [
+                                        "Robot_Dialog",
+                                        "=",
+                                        "31"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ChangePlan"
+                                      },
+                                      "parameters": [
+                                        "Text_Dialog",
+                                        "=",
+                                        "32"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "AnimatableCapability::AnimatableBehavior::SetName"
                                       },
                                       "parameters": [
-                                        "Robot",
+                                        "Robot4",
                                         "Animation",
                                         "=",
                                         "\"nyapa\""
@@ -15998,7 +18212,7 @@
                                         "value": "ResizableCapability::ResizableBehavior::SetSize"
                                       },
                                       "parameters": [
-                                        "Robot",
+                                        "Robot4",
                                         "Resizable",
                                         "430",
                                         "520"
@@ -16009,7 +18223,7 @@
                                         "value": "MettreXY"
                                       },
                                       "parameters": [
-                                        "Robot",
+                                        "Robot4",
                                         "=",
                                         "71",
                                         "=",
@@ -16186,10 +18400,10 @@
                                             "value": "AnimatableCapability::AnimatableBehavior::SetName"
                                           },
                                           "parameters": [
-                                            "Robot2",
+                                            "Robot4",
                                             "Animation",
                                             "=",
-                                            "\"Win\""
+                                            "\"menang\""
                                           ]
                                         },
                                         {
@@ -16319,7 +18533,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -16417,7 +18630,6 @@
               ],
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -16525,7 +18737,6 @@
                   ],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -16822,7 +19033,7 @@
                 "value": "MettreXY"
               },
               "parameters": [
-                "Robot2",
+                "Robot4",
                 "=",
                 "54",
                 "=",
@@ -16834,10 +19045,10 @@
                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
-                "Robot2",
+                "Robot4",
                 "Animation",
                 "=",
-                "\"Lose\""
+                "\"mati\""
               ]
             },
             {
@@ -17151,7 +19362,7 @@
           "isLocked": false,
           "name": "",
           "renderingType": "",
-          "visibility": false,
+          "visibility": true,
           "cameras": [
             {
               "defaultSize": true,
@@ -17321,7 +19532,7 @@
           "isLocked": false,
           "name": "Win or Lose",
           "renderingType": "",
-          "visibility": true,
+          "visibility": false,
           "cameras": [],
           "effects": [
             {
@@ -17417,11 +19628,44 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.36732575450588256,
+        "zoomFactor": 0.5468750000000011,
         "windowMask": false
       },
-      "objectsGroups": [],
-      "variables": [],
+      "objectsGroups": [
+        {
+          "name": "Button Buy",
+          "objects": [
+            {
+              "name": "Text_Buy"
+            },
+            {
+              "name": "Background_Button"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "Index",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Price",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Unlock",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "selected",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -17471,444 +19715,6 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 269,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Robot",
-          "persistentUuid": "7e897464-7ea5-4bae-9706-737bc8843121",
-          "width": 269,
-          "x": 117,
-          "y": 225,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 269,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Robot",
-          "persistentUuid": "3cf3ca26-6ec0-4ec8-af8c-aa69d5c298f2",
-          "width": 269,
-          "x": 506,
-          "y": 225,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 269,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Robot",
-          "persistentUuid": "e4f4d365-1659-476b-8a2b-52a6b0b11a5d",
-          "width": 269,
-          "x": 895,
-          "y": 225,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Gembok",
-          "persistentUuid": "858c655d-c7d6-4f8b-963d-748172ef84ac",
-          "width": 40,
-          "x": 755,
-          "y": 198,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Gembok",
-          "persistentUuid": "683db360-a303-429a-a11b-a1316a389d2d",
-          "width": 40,
-          "x": 1141,
-          "y": 198,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 55,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Price",
-          "persistentUuid": "494b0e19-af0c-4a6b-90c9-64966e9a8121",
-          "width": 223,
-          "x": 140,
-          "y": 500,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 55,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Price",
-          "persistentUuid": "2b02c657-f7f6-4041-b360-76f290d1981e",
-          "width": 223,
-          "x": 529,
-          "y": 500,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 55,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Price",
-          "persistentUuid": "80dd5c15-9870-46c2-90d6-8e47c4aa1867",
-          "width": 223,
-          "x": 918,
-          "y": 500,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Price",
-          "persistentUuid": "3123f1bf-5224-40f2-be0b-428d3ed309d4",
-          "width": 0,
-          "x": 206,
-          "y": 512,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "PriceIndex",
-              "type": "number",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Price",
-          "persistentUuid": "c1d4dfc6-9171-44c7-a267-f46a02e9242b",
-          "width": 0,
-          "x": 596,
-          "y": 512,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "PriceIndex",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Price",
-          "persistentUuid": "a47dda18-94d4-4d4f-b0c2-15e750e061c8",
-          "width": 0,
-          "x": 984,
-          "y": 512,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "PriceIndex",
-              "type": "number",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Button",
-          "persistentUuid": "5bd188f0-d349-4bc8-99a8-05b1675fe763",
-          "width": 175,
-          "x": 174,
-          "y": 577,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Button",
-          "persistentUuid": "f5b8f578-efb7-4a22-bb52-d952aae8ff41",
-          "width": 175,
-          "x": 563,
-          "y": 577,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Background_Button",
-          "persistentUuid": "0b26d0e3-9fce-4c0d-8727-ca70df4b9c08",
-          "width": 175,
-          "x": 959,
-          "y": 577,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Buy",
-          "persistentUuid": "5c20c47d-956b-4bbf-b12b-b244017b20df",
-          "width": 0,
-          "x": 218,
-          "y": 581,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Buy",
-          "persistentUuid": "c565f8fd-3e11-40af-82fd-7a1a92cd6c28",
-          "width": 0,
-          "x": 608,
-          "y": 581,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Text_Buy",
-          "persistentUuid": "3a39d720-d659-4900-afcb-4ac5d8f432e7",
-          "width": 0,
-          "x": 1005,
-          "y": 581,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ButtonIndex",
-              "type": "number",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 248,
-          "layer": "",
-          "name": "Robot1",
-          "persistentUuid": "4348c6c3-49a9-45e3-96c1-c09ba2119dfc",
-          "width": 157,
-          "x": 173,
-          "y": 234,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 241,
-          "layer": "",
-          "name": "Robot2",
-          "persistentUuid": "e5de2853-c4cc-4752-a9ba-f0bd0cad38fc",
-          "width": 161,
-          "x": 563,
-          "y": 240,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 244,
-          "layer": "",
-          "name": "Robot3",
-          "persistentUuid": "bc70bfac-1779-4c40-a2a7-eb932da0cfd9",
-          "width": 154,
-          "x": 952,
-          "y": 238,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 40,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Gembok",
-          "persistentUuid": "5fe975f4-0b04-4863-9179-33f8629fd0b5",
-          "width": 40,
-          "x": 362,
-          "y": 198,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "GembokIndex",
-              "type": "number",
-              "value": 0
-            }
-          ]
         }
       ],
       "objects": [
@@ -18141,7 +19947,13 @@
           "name": "Gembok",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "index",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "animations": [
@@ -18263,7 +20075,13 @@
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "index",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "string": "10.000",
@@ -18304,7 +20122,23 @@
           "name": "Background_Button",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "index",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "price",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "unlock",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "animations": [
@@ -18366,10 +20200,26 @@
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "index",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "price",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "unlock",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
-          "string": "Dipakai",
+          "string": "Pilih",
           "font": "Jersey20-Regular.ttf",
           "textAlignment": "left",
           "characterSize": 32,
@@ -18392,7 +20242,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Dipakai",
+            "text": "Pilih",
             "font": "Jersey20-Regular.ttf",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -18404,15 +20254,26 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "Robot1",
+          "name": "Robot",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "index",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "price",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "animations": [
             {
-              "name": "default",
+              "name": "robot biru",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -18458,21 +20319,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "Robot2",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
+            },
             {
-              "name": "default",
+              "name": "robot unggu",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -18501,16 +20350,16 @@
                             "y": 0
                           },
                           {
-                            "x": 620,
+                            "x": 644,
                             "y": 0
                           },
                           {
-                            "x": 620,
-                            "y": 928
+                            "x": 644,
+                            "y": 1016
                           },
                           {
                             "x": 0,
-                            "y": 928
+                            "y": 1016
                           }
                         ]
                       ]
@@ -18518,21 +20367,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "Robot3",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
+            },
             {
-              "name": "default",
+              "name": "robot topi kungin",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -18557,20 +20394,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 1,
+                            "x": 0,
                             "y": 0
                           },
                           {
-                            "x": 723,
+                            "x": 644,
                             "y": 0
                           },
                           {
-                            "x": 723,
-                            "y": 1144
+                            "x": 644,
+                            "y": 1016
                           },
                           {
-                            "x": 1,
-                            "y": 1144
+                            "x": 0,
+                            "y": 1016
                           }
                         ]
                       ]
@@ -18613,13 +20450,7 @@
             "objectName": "Text_Buy"
           },
           {
-            "objectName": "Robot1"
-          },
-          {
-            "objectName": "Robot2"
-          },
-          {
-            "objectName": "Robot3"
+            "objectName": "Robot"
           }
         ]
       },
@@ -18661,6 +20492,17 @@
             },
             {
               "type": {
+                "value": "ReadStringFromStorage"
+              },
+              "parameters": [
+                "\"PlayerData\"",
+                "\"CharacterUnlock\"",
+                "",
+                "TempVar"
+              ]
+            },
+            {
+              "type": {
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
@@ -18668,6 +20510,776 @@
                 "Text",
                 "=",
                 "CoinGlobal"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "GroupExists"
+                  },
+                  "parameters": [
+                    "\"PlayerData\"",
+                    "\"CharacterUnlock\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ReadStringFromStorage"
+                  },
+                  "parameters": [
+                    "\"PlayerData\"",
+                    "\"CharacterUnlock\"",
+                    "",
+                    "TempVar"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"AFTER LOAD: \" + ToJSON(TempVar)",
+                    "\"info\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "JSONToVariableStructure2"
+                  },
+                  "parameters": [
+                    "TempVar",
+                    "CharacterData"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"AFTER LOAD: \" + ToJSON(CharacterData)",
+                    "\"info\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "GroupExists"
+                  },
+                  "parameters": [
+                    "\"PlayerData\"",
+                    "\"CharacterUnlock\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "JSONResourceLoader::LoadJSONToGlobal"
+                  },
+                  "parameters": [
+                    "",
+                    "charcter.json",
+                    "CharacterData",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"AFTER LOAD: \" + ToJSON(CharacterData)",
+                    "\"info\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "VariableChildCount(CharacterData.robot)",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Background_Robot",
+                    "117 + 380*Variable(Index)",
+                    "225",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Background_Robot",
+                    "Resizable",
+                    "269",
+                    "269"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Robot",
+                    "173 + 380*Variable(Index)",
+                    "234",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Resizable",
+                    "157",
+                    "248"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Robot",
+                    "Animation",
+                    "=",
+                    "CharacterData.robot[Index].name"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Background_Price",
+                    "140 + 380*Variable(Index)",
+                    "500",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Background_Price",
+                    "Resizable",
+                    "223",
+                    "55"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Background_Button",
+                    "174 + 380*Variable(Index)",
+                    "577",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Background_Button",
+                    "Resizable",
+                    "175",
+                    "40"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Text_Buy",
+                    "218 + 380*Variable(Index)",
+                    "581",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetFontSize"
+                  },
+                  "parameters": [
+                    "Text_Buy",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Text_Price",
+                    "213 + 380*Variable(Index)",
+                    "510",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetFontSize"
+                  },
+                  "parameters": [
+                    "Text_Price",
+                    "=",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Gembok",
+                    "368 + 380*Variable(Index)",
+                    "198",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "Gembok",
+                    "Resizable",
+                    "40",
+                    "40"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Gembok",
+                    "=",
+                    "15"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Text_Price",
+                    "Text",
+                    "=",
+                    "CharacterData.robot[Index].price"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Price",
+                    "=",
+                    "CharacterData.robot[Index].price"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Unlock",
+                    "=",
+                    "CharacterData.robot[Index].unlock"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Button Buy",
+                    "price",
+                    "=",
+                    "Price"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Button Buy",
+                    "index",
+                    "=",
+                    "Index"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Gembok",
+                    "index",
+                    "=",
+                    "Index"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Text_Price",
+                    "index",
+                    "=",
+                    "Index"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "ToJSON(Unlock)",
+                    "\"info\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "+",
+                    "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "Unlock",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Gembok",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Text_Price",
+                        "Text",
+                        "=",
+                        "\"Terbuka\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Text_Buy",
+                        "Text",
+                        "=",
+                        "\"Pilih\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "Unlock",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Text_Buy",
+                        "Text",
+                        "=",
+                        "\"Beli\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "Text_Buy",
+                        "=",
+                        "-140 + 380*Variable(Index)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "Animation",
+                        "=",
+                        "\"robot unggu\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "Resizable",
+                        "161",
+                        "241"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "=",
+                        "240"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "Animation",
+                        "=",
+                        "\"robot topi kungin\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "Resizable",
+                        "154",
+                        "244"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "Robot",
+                        "=",
+                        "238"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectedCharacter",
+                        "=",
+                        "Button Buy.index"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Text_Buy",
+                        "Text",
+                        "=",
+                        "\"Dipilih\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Beli",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Button Buy",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CoinGlobal",
+                ">=",
+                "Button Buy.price"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Gembok",
+                    "index",
+                    "=",
+                    "Button Buy.index"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Text_Price",
+                    "index",
+                    "=",
+                    "Button Buy.index"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Gembok",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CoinGlobal",
+                    "-",
+                    "Button Buy.price"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CharacterData.robot[Button Buy.index].unlock",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Text_Price",
+                    "Text",
+                    "=",
+                    "\"Terbuka\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Text_Buy",
+                    "Text",
+                    "=",
+                    "\"Pilih\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Coin3",
+                    "Text",
+                    "=",
+                    "CoinGlobal"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EcrireFichierTxt"
+                  },
+                  "parameters": [
+                    "\"PlayerData\"",
+                    "\"CharacterUnlock\"",
+                    "ToJSON(CharacterData)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EcrireFichierExp"
+                  },
+                  "parameters": [
+                    "\"PlayerData\"",
+                    "\"Coin\"",
+                    "CoinGlobal"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "Button Buy.index",
+                    "\"info\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "Text_Price.index",
+                    "\"info\"",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -18715,6 +21327,149 @@
                 "",
                 "\"Loading\"",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Button Buy",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Unlock",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SelectedCharacter",
+                "=",
+                "Button Buy.index"
+              ]
+            },
+            {
+              "type": {
+                "value": "EcrireFichierExp"
+              },
+              "parameters": [
+                "\"PlayerData\"",
+                "\"SelectedCharacter\"",
+                "SelectedCharacter"
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "SelectedCharacter",
+                "\"info\"",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SelectedCharacter",
+                    "=",
+                    "Button Buy.index"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"SAMPLE\"",
+                    "\"info\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Text_Buy",
+                    "Text",
+                    "=",
+                    "\"Dipilih\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Button Buy",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "SelectedCharacter",
+                "=",
+                "Button Buy.index"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Text_Buy",
+                "Text",
+                "=",
+                "\"Pilih\""
               ]
             }
           ]

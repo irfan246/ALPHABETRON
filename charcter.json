@@ -1,0 +1,19 @@
+{
+    "robot": [
+        {
+            "name": "robot biru",
+            "price": 0,
+            "unlock": 1
+        },
+        {
+            "name": "robot unggu",
+            "price": 1000,
+            "unlock": 0
+        },
+        {
+            "name": "robot topi kungin",
+            "price": 2000,
+            "unlock": 0
+        }
+    ]
+}
