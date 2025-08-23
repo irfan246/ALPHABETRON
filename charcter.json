@@ -7,12 +7,12 @@
         },
         {
             "name": "robot unggu",
-            "price": 1000,
+            "price": 10,
             "unlock": 0
         },
         {
             "name": "robot topi kungin",
-            "price": 2000,
+            "price": 20,
             "unlock": 0
         }
     ]
