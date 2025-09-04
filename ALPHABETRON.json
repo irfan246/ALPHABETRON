@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "Home",
   "gdVersion": {
     "build": 239,
     "major": 5,
@@ -18392,7 +18392,7 @@
                   },
                   "parameters": [
                     "",
-                    "Robot2",
+                    "Robot3",
                     "Robot_Spawn.X()",
                     "Robot_Spawn.Y()",
                     ""
@@ -18403,7 +18403,7 @@
                     "value": "ResizableCapability::ResizableBehavior::SetSize"
                   },
                   "parameters": [
-                    "Robot2",
+                    "Robot3",
                     "Resizable",
                     "Robot_Spawn.Width()",
                     "Robot_Spawn.Height()"
@@ -18414,7 +18414,7 @@
                     "value": "ChangePlan"
                   },
                   "parameters": [
-                    "Robot2",
+                    "Robot3",
                     "=",
                     "23"
                   ]
@@ -18450,6 +18450,16 @@
           "actions": [
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Timer",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
                 "value": "PlaySoundCanal"
               },
               "parameters": [
@@ -18458,16 +18468,6 @@
                 "27",
                 "no",
                 "SFXVolume - 10",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Timer",
-                "-",
                 "1"
               ]
             },
@@ -18635,6 +18635,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -20911,6 +20912,15 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "PauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"countDown\""
+              ]
+            },
             {
               "type": {
                 "value": "ShowLayer"
