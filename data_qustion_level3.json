@@ -1,22 +1,82 @@
 {
   "questions": [
     {
-      "qustion": ["a", "u", "k", "r", "s"],
-      "answer": "kasur",
-      "coin1": 100,
-      "coin2": 50
+      "qustion": ["L", "O", "T", "O", "B"],
+      "answer": "BOTOL",
+      "coin1": 90,
+      "coin2": 60
     },
     {
-      "qustion": ["m", "y", "a", "a"],
-      "answer": "ayam",
-      "coin1": 100,
-      "coin2": 50
+      "qustion": ["R", "A", "J", "I"],
+      "answer": "JARI",
+      "coin1": 70,
+      "coin2": 40
     },
     {
-      "qustion": ["p", "a", "s", "i"],
-      "answer": "sapi",
+      "qustion": ["R", "I", "A"],
+      "answer": "AIR",
+      "coin1": 40,
+      "coin2": 20
+    },
+    {
+      "qustion": ["P", "I", "A"],
+      "answer": "API",
+      "coin1": 30,
+      "coin2": 15
+    },
+    {
+      "qustion": ["L", "A", "O", "B"],
+      "answer": "BOLA",
+      "coin1": 65,
+      "coin2": 35
+    },
+    {
+      "qustion": ["N", "A", "K", "A", "M"],
+      "answer": "MAKAN",
+      "coin1": 95,
+      "coin2": 65
+    },
+    {
+      "qustion": ["M", "U", "M", "I", "N"],
+      "answer": "MINUM",
+      "coin1": 85,
+      "coin2": 55
+    },
+    {
+      "qustion": ["R", "I", "T", "U", "D"],
+      "answer": "TIDUR",
       "coin1": 100,
-      "coin2": 50
+      "coin2": 70
+    },
+    {
+      "qustion": ["G", "I", "A", "P"],
+      "answer": "PAGI",
+      "coin1": 75,
+      "coin2": 45
+    },
+    {
+      "qustion": ["E", "R", "O", "S"],
+      "answer": "SORE",
+      "coin1": 70,
+      "coin2": 40
+    },
+    {
+      "qustion": ["M", "A", "L", "A", "M"],
+      "answer": "MALAM",
+      "coin1": 90,
+      "coin2": 60
+    },
+    {
+      "qustion": ["S", "A", "P", "I"],
+      "answer": "SAPI",
+      "coin1": 60,
+      "coin2": 30
+    },
+    {
+      "qustion": ["C", "I", "N", "U", "K", "G"],
+      "answer": "KUCING",
+      "coin1": 100,
+      "coin2": 70
     }
   ]
 }

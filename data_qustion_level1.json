@@ -1,18 +1,56 @@
 {
   "questions": [
     {
-      "question": "Buah manakah yang berawalan dengan huruf T?",
-      "answers": ["Tomat", "Jeruk", "Pisang"],
+      "question": "Binatang apakah yang berawalan dengan huruf K?",
+      "answers": ["Anjing", "Ikan", "Kucing"],
       "select": ["A", "B", "C"],
-      "correctIndex": 0,
+      "correctIndex": 2,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
       "coin1": 100,
       "coin2": 50
     },
-     {
-      "question": "Buah manakah yang berawalan dengan huruf A?",
-      "answers": ["Sawo", "Apel", "Pisang"],
+    {
+      "question": "Buah apakah yang berawalan dengan huruf M?",
+      "answers": ["Anggur", "Mangga", "Nanas"],
       "select": ["A", "B", "C"],
       "correctIndex": 1,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question": "Benda sekolah apakah yang berawalan dengan huruf P?",
+      "answers": ["Pensil", "Buku", "Papan"],
+      "select": ["A", "B", "C"],
+      "correctIndex": 0,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question": "Angka berapa yang berawalan dengan huruf L?",
+      "answers": ["Tiga", "Satu", "Lima"],
+      "select": ["A", "B", "C"],
+      "correctIndex": 2,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question": "Buah apakah yang berawalan dengan huruf J?",
+      "answers": ["Semangka", "Jeruk", "Apel"],
+      "select": ["A", "B", "C"],
+      "correctIndex": 1,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question": "Binatang apakah yang berawalan dengan huruf A?",
+      "answers": ["Ayam", "Gajah", "Burung"],
+      "select": ["A", "B", "C"],
+      "correctIndex": 0,
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
       "coin1": 100,
       "coin2": 50
     }

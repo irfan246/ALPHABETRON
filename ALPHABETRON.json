@@ -259,14 +259,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/NewSprite2.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite2.png\"}",
-        "name": "NewSprite2",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "jersey-15-latin-400-normal2.ttf",
         "kind": "font",
         "metadata": "",
@@ -278,14 +270,6 @@
         "kind": "font",
         "metadata": "",
         "name": "jersey-15-latin-400-normal3.ttf",
-        "userAdded": false
-      },
-      {
-        "file": "assets/NewSprite4.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite4",
-        "smoothed": true,
         "userAdded": false
       },
       {
@@ -316,38 +300,6 @@
         "kind": "json",
         "metadata": "",
         "name": "data_qustion.json",
-        "userAdded": false
-      },
-      {
-        "file": "assets/correct.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "correct",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/wrong.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "wrong",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/correct2.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "correct2",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/wrong2.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "wrong2",
-        "smoothed": true,
         "userAdded": false
       },
       {
@@ -493,30 +445,6 @@
         "kind": "font",
         "metadata": "",
         "name": "jersey-15-latin-400-normal11.ttf",
-        "userAdded": false
-      },
-      {
-        "file": "background answer default.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background answer default.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background answer correct.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background answer correct.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background answer wrong.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background answer wrong.png",
-        "smoothed": true,
         "userAdded": false
       },
       {
@@ -865,14 +793,6 @@
         "userAdded": false
       },
       {
-        "file": "robot biru murung.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot biru murung.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "bayangan.png",
         "kind": "image",
         "metadata": "",
@@ -885,14 +805,6 @@
         "kind": "image",
         "metadata": "",
         "name": "backround18.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot biru hore.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot biru hore.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -953,14 +865,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/NewSprite3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\NewSprite3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "background answer correct2.png",
         "kind": "image",
         "metadata": "",
@@ -985,262 +889,6 @@
         "userAdded": false
       },
       {
-        "file": "background level1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background level1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background level2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background level2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background11.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background11.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background12.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background12.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background13.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background13.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background16.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background16.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background22.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background22.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background5.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background7.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background7.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "background8.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "background8.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "informasi level2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "informasi level2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1_2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1_2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1_3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1_3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1_4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1_4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1_5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1_5.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1_6.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1_6.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level2_1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level2_1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level2_2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level2_2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level2_3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level2_3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading level6.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading level6.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "loading5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "loading5.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot 2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot 2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot background.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot background.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "Robot Biru/ab 2.png",
         "kind": "image",
         "metadata": "",
@@ -1257,42 +905,10 @@
         "userAdded": false
       },
       {
-        "file": "Robot Biru/bagong 1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Robot Biru\\bagong 1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "Robot Biru/bobot 1.png",
         "kind": "image",
         "metadata": "",
         "name": "Robot Biru\\bobot 1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "Robot Biru/telo 1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Robot Biru\\telo 1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot dialog 1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot dialog 1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot level3_1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot level3_1.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -1373,46 +989,6 @@
         "kind": "image",
         "metadata": "",
         "name": "Robot Unggu\\Untitled-2 1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "robot4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "robot4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "tebak buah1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "tebak buah1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "tebak buah2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "tebak buah2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "tebak buah3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "tebak buah3.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -1675,16 +1251,6 @@
         "userAdded": false
       },
       {
-        "file": "Timer.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "Timer.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "Lampu Menyala.wav",
         "kind": "audio",
         "metadata": "",
@@ -1702,6 +1268,40 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "Timer2.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Timer2.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "susunkata1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "susunkata1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "susunkata2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "susunkata2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "susunkata3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "susunkata3.png",
+        "smoothed": true,
         "userAdded": false
       }
     ],
@@ -10701,7 +10301,7 @@
                 "Reward1",
                 "Text",
                 "=",
-                "\"100\""
+                "Data.questions[Variable(RandomIndex)].coin1"
               ]
             },
             {
@@ -10712,7 +10312,7 @@
                 "Reward2",
                 "Text",
                 "=",
-                "\"50\""
+                "Data.questions[Variable(RandomIndex)].coin2"
               ]
             },
             {
@@ -10995,7 +10595,7 @@
               "parameters": [
                 "CoinScene",
                 "=",
-                "100 + 50"
+                "Data.questions[Variable(RandomIndex)].coin1 + Data.questions[Variable(RandomIndex)].coin2"
               ]
             },
             {
@@ -15174,7 +14774,7 @@
                 "Reward1",
                 "Text",
                 "=",
-                "\"250\""
+                "Data.questions[Variable(RandomIndex)].coin1"
               ]
             },
             {
@@ -15185,7 +14785,7 @@
                 "Reward2",
                 "Text",
                 "=",
-                "\"150\""
+                "Data.questions[Variable(RandomIndex)].coin2"
               ]
             },
             {
@@ -15468,7 +15068,7 @@
               "parameters": [
                 "CoinScene",
                 "=",
-                "250 + 150"
+                "Data.questions[Variable(RandomIndex)].coin1 + Data.questions[Variable(RandomIndex)].coin2"
               ]
             },
             {
@@ -15841,6 +15441,16 @@
           "name": "CoinScene",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "RandomIndex",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TopIndex",
+          "type": "number",
+          "value": -1
         }
       ],
       "instances": [
@@ -16168,6 +15778,22 @@
           "x": 192,
           "y": 150,
           "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 123.6,
+          "layer": "",
+          "name": "Susun_Kata",
+          "persistentUuid": "e2ae5cc4-e061-4498-9fd7-509bb73d07d2",
+          "width": 356.7,
+          "x": 478,
+          "y": 39,
+          "zOrder": 25,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -18138,6 +17764,138 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Susun_Kata",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.065,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "susunkata1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 247
+                          },
+                          {
+                            "x": 0,
+                            "y": 247
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "susunkata2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 247
+                          },
+                          {
+                            "x": 0,
+                            "y": 247
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "susunkata3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 0
+                          },
+                          {
+                            "x": 713,
+                            "y": 247
+                          },
+                          {
+                            "x": 0,
+                            "y": 247
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -18217,6 +17975,9 @@
           },
           {
             "objectName": "IconCek"
+          },
+          {
+            "objectName": "Susun_Kata"
           }
         ]
       },
@@ -18317,6 +18078,16 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TopIndex",
+                "=",
+                "-1"
+              ]
+            },
+            {
+              "type": {
                 "value": "ShowLayer"
               },
               "parameters": [
@@ -18352,19 +18123,6 @@
                 "26",
                 "",
                 "SFXVolume",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySoundCanal"
-              },
-              "parameters": [
-                "",
-                "Timer.wav",
-                "27",
-                "yes",
-                "SFXVolume - 10",
                 "1"
               ]
             }
@@ -18692,6 +18450,19 @@
           "actions": [
             {
               "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "Timer2.wav",
+                "27",
+                "no",
+                "SFXVolume - 10",
+                "1"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -18864,7 +18635,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -18896,6 +18666,17 @@
                 "placed",
                 "=",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Text_Answer",
+                "slotAssigned",
+                "=",
+                "SlotIndex -1"
               ]
             },
             {
@@ -18946,7 +18727,7 @@
               "parameters": [
                 "Text_Answer",
                 "slotAssigned",
-                "=",
+                "-",
                 "-1"
               ]
             },
@@ -19001,17 +18782,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Text_Answer",
-                    "slotAssigned",
-                    "-",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "MettreXY"
                   },
                   "parameters": [
@@ -19020,6 +18790,17 @@
                     "758 + 95*Text_Answer.slotAssigned",
                     "=",
                     "381"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Text_Answer",
+                    "slotAssigned",
+                    "-",
+                    "1"
                   ]
                 }
               ]
@@ -19110,6 +18891,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -19180,6 +18962,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -19276,6 +19059,7 @@
               ],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -19428,6 +19212,7 @@
                   ],
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -19668,6 +19453,7 @@
                           ]
                         },
                         {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -19848,6 +19634,7 @@
                           ],
                           "events": [
                             {
+                              "folded": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
@@ -19948,6 +19735,7 @@
                               ],
                               "events": [
                                 {
+                                  "folded": true,
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
                                     {
@@ -20379,7 +20167,7 @@
                                             "Reward1",
                                             "Text",
                                             "=",
-                                            "\"200\""
+                                            "Data.questions[Variable(RandomIndex)].coin1"
                                           ]
                                         },
                                         {
@@ -20390,7 +20178,7 @@
                                             "Reward2",
                                             "Text",
                                             "=",
-                                            "\"100\""
+                                            "Data.questions[Variable(RandomIndex)].coin2"
                                           ]
                                         },
                                         {
@@ -20617,6 +20405,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -21469,6 +21258,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -21523,7 +21313,7 @@
                   "parameters": [
                     "CoinScene",
                     "=",
-                    "200 + 100 +50"
+                    "Data.questions[Variable(RandomIndex)].coin1 + Data.questions[Variable(RandomIndex)].coin2 +50"
                   ]
                 },
                 {
@@ -23326,7 +23116,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "1"
+                    "2"
                   ]
                 },
                 {
@@ -23538,7 +23328,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "1"
+                    "2"
                   ]
                 },
                 {

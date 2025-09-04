@@ -3,7 +3,7 @@
     {
       "question1": "Berakhiran huruf",
       "question2": "ga",
-      "answers": ["Mangga", "Singa", "Pangga"],
+      "answers": ["Singa", "Mangga", "Pangga"],
       "correctIndex": 0,
       "clue": "buas",
       "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
@@ -15,7 +15,67 @@
       "question2": "at",
       "answers": ["Lalat", "Kuat", "Sehat"],
       "correctIndex": 0,
-      "clue": "serangga \nASdasas asdaDad",
+      "clue": "serangga",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "an",
+      "answers": ["Papan", "Sopan", "Besi"],
+      "correctIndex": 0,
+      "clue": "terbuat\ndari\nkayu",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "el",
+      "answers": ["Pisang", "Apel", "Kelapa"],
+      "correctIndex": 1,
+      "clue": "berwarna\nmerah\natau\nhijau",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "ku",
+      "answers": ["Buku", "Senyum", "Tangan"],
+      "correctIndex": 0,
+      "clue": "tempat\nmenulis\natau\nmembaca",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "it",
+      "answers": ["Topi", "Rakit", "Bukit"],
+      "correctIndex": 1,
+      "clue": "alat\nmengapung\ndi\nair",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "as",
+      "answers": ["Mangga", "Tas", "Panas"],
+      "correctIndex": 2,
+      "clue": "lawan\ndari\ndingin",
+      "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
+      "coin1": 100,
+      "coin2": 50
+    },
+    {
+      "question1": "Berakhiran huruf",
+      "question2": "et",
+      "answers": ["Baret", "Meja", "Kupu"],
+      "correctIndex": 0,
+      "clue": "topi\nkeras\ntentara",
       "robotDialog": ["Duh, sepertinya kamu kurang tepat.", "Tolong pilih dengan benar ya energiku ingin habis nih!", "Kita coba lagi ya!"],
       "coin1": 100,
       "coin2": 50
