@@ -18,7 +18,7 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "Alphabetron",
     "description": "",
     "author": "",
@@ -18727,7 +18727,7 @@
               "parameters": [
                 "Text_Answer",
                 "slotAssigned",
-                "-",
+                "=",
                 "-1"
               ]
             },
